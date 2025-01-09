@@ -84,7 +84,6 @@ tl.to(".home_echo-mask-icon", {
   ); // Le texte commence 0.8s avant la fin de l'animation de l'image
 
 // ANIM SUCCESS STORIES PILLS
-
 // Configuration initiale
 gsap.set(".success-stories_step", {
   translateY: "20%",
@@ -195,7 +194,7 @@ benefitsBlocks.forEach((block, index) => {
         start: "top bottom", // Commence quand le haut du block atteint le bas de la fenêtre
         end: "top center", // Finit quand le haut du block atteint le centre de la fenêtre
         scrub: true,
-        markers: true, // Pour debug
+        // markers: true, // Pour debug
       }
     }
   );
