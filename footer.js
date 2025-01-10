@@ -1,3 +1,4 @@
+// PRE-FOOTER IMAGES ANIMATION
 // Créer la timeline
 const preFooterTl = gsap.timeline({
   scrollTrigger: {
