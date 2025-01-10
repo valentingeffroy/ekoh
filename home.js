@@ -59,7 +59,7 @@ const tl = gsap.timeline({
   scrollTrigger: {
     trigger: ".home_echo-mask-icon",
     start: "30% center",
-    toggleActions: "play pause reset reset",
+    toggleActions: "play pause pause pause",
   },
 });
 
@@ -99,7 +99,7 @@ stepsContainers.forEach((container) => {
   const tl = gsap.timeline({
     scrollTrigger: {
       trigger: container,
-      start: "top center",
+      start: "50% bottom",
       // markers: true,
       toggleActions: "play none none none",
     },
@@ -173,19 +173,19 @@ splitTypes.forEach((char, i) => {
   });
 });
 
-
 // ANIM VOS RÉSEAUX
 const benefitsBlocks = document.querySelectorAll(".benefits_block-text");
 
 benefitsBlocks.forEach((block, index) => {
   // Définir les rotations initiales et finales selon si le block est pair ou impair
-  const isPair = block.classList.contains('is-pair');
+  const isPair = block.classList.contains("is-pair");
   const startRotation = isPair ? 6 : -6;
   const endRotation = isPair ? -2 : 2;
 
-  gsap.fromTo(block, 
+  gsap.fromTo(
+    block,
     {
-      rotate: startRotation
+      rotate: startRotation,
     },
     {
       rotate: endRotation,
@@ -195,7 +195,95 @@ benefitsBlocks.forEach((block, index) => {
         end: "top center", // Finit quand le haut du block atteint le centre de la fenêtre
         scrub: true,
         // markers: true, // Pour debug
-      }
+      },
     }
   );
 });
+
+// ANIM HERO HOME
+window.onload = () => {
+  // Gestion des vidéos dans le hero
+  const heroVideos = document.querySelectorAll(".home-hero_video video");
+
+  heroVideos.forEach((video) => {
+    // Vérifier si la vidéo est déjà chargée
+    if (video.readyState >= 3) {
+      video.play();
+    } else {
+      // Si la vidéo n'est pas encore chargée, attendre qu'elle le soit
+      video.addEventListener("canplay", () => {
+        video.play();
+      });
+    }
+  });
+
+  // Timeline principale
+  const tl = gsap.timeline({
+    defaults: {
+      ease: "power2.out",
+      duration: 1,
+    },
+  });
+
+  // Animation des éléments
+  tl
+    // Premier élément
+    .to(".home-hero_asset-wrapper.is-01", {
+      bottom: "-40%",
+    })
+    .to(
+      ".home-hero_image-rotate.is-01",
+      {
+        rotation: 4,
+      },
+      "<"
+    )
+
+    // Deuxième élément
+    .to(
+      ".home-hero_asset-wrapper.is-02",
+      {
+        bottom: "-45%",
+      },
+      "<"
+    )
+    .to(
+      ".home-hero_video-wrapper.is-02",
+      {
+        rotation: -4,
+      },
+      "<"
+    )
+
+    // Troisième élément
+    .to(
+      ".home-hero_asset-wrapper.is-03",
+      {
+        bottom: "-8%",
+      },
+      "<"
+    )
+    .to(
+      ".home-hero_image-rotate.is-03",
+      {
+        rotation: -2,
+      },
+      "<"
+    )
+
+    // Quatrième élément
+    .to(
+      ".home-hero_asset-wrapper.is-04",
+      {
+        bottom: "-15%",
+      },
+      "<"
+    )
+    .to(
+      ".home-hero_video-wrapper.is-04",
+      {
+        rotation: 2,
+      },
+      "<"
+    );
+};
