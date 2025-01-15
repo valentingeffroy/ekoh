@@ -37,13 +37,13 @@ if (cardsBruit.length && containerBruit) {
   // Animer chaque carte
   cardsBruit.forEach((card, i) => {
     gsap.set(card, {
-      rotation: rotations.start[i],
+      // rotation: rotations.start[i],
     });
 
     tl.to(
       card,
       {
-        rotation: rotations.end[i],
+        // rotation: rotations.end[i],
         ease: "power1.inOut",
         duration: 1,
       },
@@ -217,73 +217,76 @@ window.onload = () => {
     }
   });
 
-  // Timeline principale
-  const tl = gsap.timeline({
-    defaults: {
-      ease: "power2.out",
-      duration: 1,
-    },
-  });
+  // Vérification simple de la largeur d'écran
+  if (window.matchMedia("(min-width: 992px)").matches) {
+    // Timeline principale
+    const tl = gsap.timeline({
+      defaults: {
+        ease: "power2.out",
+        duration: 1,
+      },
+    });
 
-  // Animation des éléments
-  tl
-    // Premier élément
-    .to(".home-hero_asset-wrapper.is-01", {
-      bottom: "-40%",
-    })
-    .to(
-      ".home-hero_image-rotate.is-01",
-      {
-        rotation: 4,
-      },
-      "<"
-    )
+    // Animation des éléments
+    tl
+      // Premier élément
+      .to(".home-hero_asset-wrapper.is-01", {
+        bottom: "-40%",
+      })
+      .to(
+        ".home-hero_image-rotate.is-01",
+        {
+          rotation: 4,
+        },
+        "<"
+      )
 
-    // Deuxième élément
-    .to(
-      ".home-hero_asset-wrapper.is-02",
-      {
-        bottom: "-45%",
-      },
-      "<"
-    )
-    .to(
-      ".home-hero_video-wrapper.is-02",
-      {
-        rotation: -4,
-      },
-      "<"
-    )
+      // Deuxième élément
+      .to(
+        ".home-hero_asset-wrapper.is-02",
+        {
+          bottom: "-45%",
+        },
+        "<"
+      )
+      .to(
+        ".home-hero_video-wrapper.is-02",
+        {
+          rotation: -4,
+        },
+        "<"
+      )
 
-    // Troisième élément
-    .to(
-      ".home-hero_asset-wrapper.is-03",
-      {
-        bottom: "-8%",
-      },
-      "<"
-    )
-    .to(
-      ".home-hero_image-rotate.is-03",
-      {
-        rotation: -2,
-      },
-      "<"
-    )
+      // Troisième élément
+      .to(
+        ".home-hero_asset-wrapper.is-03",
+        {
+          bottom: "-8%",
+        },
+        "<"
+      )
+      .to(
+        ".home-hero_image-rotate.is-03",
+        {
+          rotation: -2,
+        },
+        "<"
+      )
 
-    // Quatrième élément
-    .to(
-      ".home-hero_asset-wrapper.is-04",
-      {
-        bottom: "-15%",
-      },
-      "<"
-    )
-    .to(
-      ".home-hero_video-wrapper.is-04",
-      {
-        rotation: 2,
-      },
-      "<"
-    );
+      // Quatrième élément
+      .to(
+        ".home-hero_asset-wrapper.is-04",
+        {
+          bottom: "-15%",
+        },
+        "<"
+      )
+      .to(
+        ".home-hero_video-wrapper.is-04",
+        {
+          rotation: 2,
+        },
+        "<"
+      );
+  }
 };

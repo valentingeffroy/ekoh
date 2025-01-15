@@ -2,7 +2,7 @@
 const menuWrapper = document.querySelector(".navbar_menu-wrapper");
 const navbarComponent = document.querySelector(".navbar_component");
 const menuLinks = document.querySelectorAll(".navbar_menu-links .link-effect_content");
-const menuBackground = document.querySelector(".navbar_background-menu-open");
+// const menuBackground = document.querySelector(".navbar_background-menu-open");
 const navbarMenu = document.querySelector(".navbar_menu");
 const navbarLogo = document.querySelector(".navbar_logo");
 const navFixed = document.querySelector(".nav_fixed");
@@ -13,9 +13,11 @@ gsap.set(menuLinks, {
   y: "-100%",
 });
 
+/*
 gsap.set(menuBackground, {
   height: "0%",
 });
+*/
 
 gsap.set(navbarMenu, {
   height: 0,
@@ -26,6 +28,7 @@ gsap.set(imageMask, {
   opacity: 0,
 });
 
+
 // Fonction pour fermer le menu
 const closeMenu = () => {
   // Animation de fermeture
@@ -35,12 +38,14 @@ const closeMenu = () => {
   navbarComponent.classList.remove("menu-open");
   menuWrapper.classList.remove("menu-open");
 
+  /*
   // Toutes les animations commencent en même temps
   tl.to(menuBackground, {
     height: "0%",
     duration: 1,
     ease: "power2.inOut",
   });
+  */
 
   // Animation du menu
   tl.to(
@@ -99,17 +104,6 @@ const openMenu = () => {
     duration: 1,
     ease: "power2.inOut",
   });
-
-  // Animation du background
-  tl.to(
-    menuBackground,
-    {
-      height: "100%",
-      duration: 1,
-      ease: "power2.inOut",
-    },
-    "<"
-  );
 
   // Animation du menu
   tl.to(
