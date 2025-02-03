@@ -146,7 +146,7 @@ menuWrapper.addEventListener("click", (e) => {
   const isOpening = !navbarComponent.classList.contains("menu-open");
 
   // Arrêter toutes les animations en cours
-  gsap.killTweensOf([menuLinks, menuBackground, navbarMenu, navbarLogo]);
+  gsap.killTweensOf([menuLinks, navbarMenu, navbarLogo]);
 
   if (isOpening) {
     navbarComponent.classList.add("menu-open");
@@ -164,7 +164,7 @@ document.addEventListener("click", (e) => {
     navbarComponent.classList.contains("menu-open") &&
     !navFixed.contains(e.target)
   ) {
-    gsap.killTweensOf([menuLinks, menuBackground, navbarMenu, navbarLogo]);
+    gsap.killTweensOf([menuLinks, navbarMenu, navbarLogo]);
     closeMenu();
   }
 });

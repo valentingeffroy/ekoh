@@ -203,7 +203,7 @@ benefitsBlocks.forEach((block, index) => {
 // ANIM HERO HOME
 window.onload = () => {
   // Gestion des vidéos dans le hero
-  const heroVideos = document.querySelectorAll(".home-hero_video video");
+  const heroVideos = document.querySelectorAll(".hero_video video");
 
   heroVideos.forEach((video) => {
     // Vérifier si la vidéo est déjà chargée
@@ -230,11 +230,11 @@ window.onload = () => {
     // Animation des éléments
     tl
       // Premier élément
-      .to(".home-hero_asset-wrapper.is-01", {
+      .to(".hero_asset-wrapper.is-01", {
         bottom: "-40%",
       })
       .to(
-        ".home-hero_image-rotate.is-01",
+        ".hero_image-rotate.is-01",
         {
           rotation: 4,
         },
@@ -243,14 +243,14 @@ window.onload = () => {
 
       // Deuxième élément
       .to(
-        ".home-hero_asset-wrapper.is-02",
+        ".hero_asset-wrapper.is-02",
         {
           bottom: "-45%",
         },
         "<"
       )
       .to(
-        ".home-hero_video-wrapper.is-02",
+        ".hero_video-wrapper.is-02",
         {
           rotation: -4,
         },
@@ -259,14 +259,14 @@ window.onload = () => {
 
       // Troisième élément
       .to(
-        ".home-hero_asset-wrapper.is-03",
+        ".hero_asset-wrapper.is-03",
         {
           bottom: "-8%",
         },
         "<"
       )
       .to(
-        ".home-hero_image-rotate.is-03",
+        ".hero_image-rotate.is-03",
         {
           rotation: -2,
         },
@@ -275,14 +275,14 @@ window.onload = () => {
 
       // Quatrième élément
       .to(
-        ".home-hero_asset-wrapper.is-04",
+        ".hero_asset-wrapper.is-04",
         {
           bottom: "-15%",
         },
         "<"
       )
       .to(
-        ".home-hero_video-wrapper.is-04",
+        ".hero_video-wrapper.is-04",
         {
           rotation: 2,
         },
