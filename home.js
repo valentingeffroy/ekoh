@@ -53,7 +53,6 @@ if (cardsBruit.length && containerBruit) {
 }
 
 // ANIM MASK IMAGE + TEXT REVEAL
-
 // Timeline pour synchroniser les animations
 const tl = gsap.timeline({
   scrollTrigger: {
