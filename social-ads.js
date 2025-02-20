@@ -41,7 +41,7 @@ const packSwiper = new Swiper(".swiper.social-ads-pack", {
 });
 
 /* ANIMATION CHECK ICON  */
-gsap.from(".service_checklist-right-item-image", {
+gsap.from(".is-relative", {
   opacity: 0,
   y: 30,
   duration: 0.8,
