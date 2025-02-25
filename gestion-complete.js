@@ -198,7 +198,7 @@ window.onload = () => {
 };
 
 /* ANIMATION CHECK ICON  */
-gsap.from(".is-relative", {
+gsap.from(".service_checklist-wrapper .is-relative", {
   opacity: 0,
   y: 30,
   duration: 0.8,
