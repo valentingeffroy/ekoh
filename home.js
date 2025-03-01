@@ -90,6 +90,7 @@ gsap.set(".success-stories_step", {
 });
 
 const stepsContainers = document.querySelectorAll(".success-stories_steps");
+const isDesktop = window.matchMedia("(min-width: 992px)").matches; // Vérification unique du desktop
 
 stepsContainers.forEach((container) => {
   const steps = container.querySelectorAll(".success-stories_step");
@@ -108,14 +109,17 @@ stepsContainers.forEach((container) => {
     // Récupérer la rotation finale du CSS
     let finalRotation = 0;
 
-    if (step.classList.contains("is-01-01")) finalRotation = 4.08;
-    else if (step.classList.contains("is-01-02")) finalRotation = -6.35;
-    else if (step.classList.contains("is-01-03")) finalRotation = -3.97;
-    else if (step.classList.contains("is-01-04")) finalRotation = 11.8;
-    else if (step.classList.contains("is-02-01")) finalRotation = -4.36;
-    else if (step.classList.contains("is-02-02")) finalRotation = 7.31;
-    else if (step.classList.contains("is-02-03")) finalRotation = 0.97;
-    else if (step.classList.contains("is-02-04")) finalRotation = 8.95;
+    // N'appliquer les rotations que sur desktop
+    if (isDesktop) {
+      if (step.classList.contains("is-01-01")) finalRotation = 4.08;
+      else if (step.classList.contains("is-01-02")) finalRotation = -6.35;
+      else if (step.classList.contains("is-01-03")) finalRotation = -3.97;
+      else if (step.classList.contains("is-01-04")) finalRotation = 11.8;
+      else if (step.classList.contains("is-02-01")) finalRotation = -4.36;
+      else if (step.classList.contains("is-02-02")) finalRotation = 7.31;
+      else if (step.classList.contains("is-02-03")) finalRotation = 0.97;
+      else if (step.classList.contains("is-02-04")) finalRotation = 8.95;
+    }
 
     // Ajouter chaque animation à la timeline avec un stagger
     tl.to(
@@ -128,9 +132,10 @@ stepsContainers.forEach((container) => {
         ease: "power2.out",
       },
       "<+=0.2"
-    ); // Ajoute 0.2s de délai entre chaque animation
+    );
   });
 });
+
 
 // ANIM SUCCESS STORIES BIG TEXT
 // Animation des capsules
