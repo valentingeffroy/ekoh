@@ -103,7 +103,7 @@ function createMobileAnimation() {
         trigger: block,
         start: animConfig.mobile.scrollStart,
         toggleActions: "play none none none",
-        markers: true,
+        // markers: true,
         once: true, // L'animation ne se joue qu'une fois
       },
     });
@@ -131,7 +131,7 @@ function createDesktopAnimation() {
         start: animConfig.desktop.scrollStart,
         end: animConfig.desktop.scrollEnd,
         toggleActions: "play none none none",
-        markers: true,
+        // markers: true,
         once: true, // L'animation ne se joue qu'une fois
       },
     });
@@ -178,7 +178,7 @@ function animateSteps() {
         trigger: ".lab_block-cta-right-content",
         start: "top 75%",
         toggleActions: "play none none none",
-        markers: true,
+        // markers: true,
         once: true
       }
     });

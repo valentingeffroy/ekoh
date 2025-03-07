@@ -41,7 +41,7 @@ splitTypes.forEach((char, i) => {
       start: "top 100%",
       end: "top 20%",
       scrub: true,
-      markers: true, // À mettre à false en production
+      // markers: true, // À mettre à false en production
       toggleActions: "play reverse play reverse", // Pour avoir l'effet reverse
     },
     opacity: 0.2,
