@@ -1,4 +1,5 @@
 // PRE-FOOTER IMAGES ANIMATION
+gsap.registerPlugin(ScrollTrigger);
 // Créer la timeline
 const preFooterTl = gsap.timeline({
   scrollTrigger: {
@@ -13,7 +14,6 @@ preFooterTl
   // Premier élément (is-01)
   .from(".pre-footer_image-effect.is-01", {
     y: "10%",
-    scale: 0.85,
     opacity: 0,
     duration: 1,
     ease: "power2.out",
@@ -24,7 +24,6 @@ preFooterTl
     ".pre-footer_image-effect.is-02",
     {
       y: "100%",
-      scale: 0.9,
       opacity: 0,
       duration: 1,
       ease: "power2.out",
@@ -37,7 +36,6 @@ preFooterTl
     ".pre-footer_image-effect.is-03",
     {
       y: "200%",
-      scale: 0.95,
       opacity: 0,
       duration: 1,
       ease: "power2.out",
