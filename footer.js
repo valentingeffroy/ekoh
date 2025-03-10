@@ -1,5 +1,5 @@
 // PRE-FOOTER IMAGES ANIMATION
-gsap.registerPlugin(ScrollTrigger);
+
 // Créer la timeline
 const preFooterTl = gsap.timeline({
   scrollTrigger: {

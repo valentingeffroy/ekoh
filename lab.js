@@ -1,5 +1,3 @@
-gsap.registerPlugin(ScrollTrigger);
-
 // ANIM HERO HOME
 window.onload = () => {
   // Gestion des vidéos dans le hero

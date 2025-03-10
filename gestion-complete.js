@@ -1,5 +1,3 @@
-gsap.registerPlugin(ScrollTrigger);
-
 const selectors = document.querySelectorAll(".service_tab-selector");
 
 // Fonction pour mettre à jour la hauteur du wrapper

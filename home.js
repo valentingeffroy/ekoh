@@ -1,5 +1,4 @@
 // ANIM BRUITS ARC DE CERCLE
-gsap.registerPlugin(ScrollTrigger);
 
 // Configuration initiale
 gsap.set(".home_bruits-cards", {
@@ -135,7 +134,6 @@ stepsContainers.forEach((container) => {
     );
   });
 });
-
 
 // ANIM SUCCESS STORIES BIG TEXT
 // Animation des capsules
