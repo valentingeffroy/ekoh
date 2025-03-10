@@ -152,38 +152,36 @@ function initAnimations() {
 // Simple initialisation
 initAnimations();
 
-
 // Animation des steps
 function animateSteps() {
-    const steps = gsap.utils.toArray('.success-stories_step');
-    
-    // Configuration initiale
-    gsap.set(steps, {
-      opacity: 0,
-      y: 30
-    });
-    
-    // Configuration spécifique des rotations
-    gsap.set(steps[0], { rotate: -2 });
-    gsap.set(steps[1], { rotate: 1.5 });
-  
-    // Animation
-    gsap.to(steps, {
-      opacity: 1,
-      y: 0,
-      duration: 0.8,
-      ease: "power2.out",
-      stagger: 0.2,
-      scrollTrigger: {
-        trigger: ".lab_block-cta-right-content",
-        start: "top 75%",
-        toggleActions: "play none none none",
-        // markers: true,
-        once: true
-      }
-    });
-  }
-  
-  // Initialisation
-  animateSteps();
-  
+  const steps = gsap.utils.toArray(".success-stories_step");
+
+  // Configuration initiale
+  gsap.set(steps, {
+    opacity: 0,
+    y: 30,
+  });
+
+  // Configuration spécifique des rotations
+  gsap.set(steps[0], { rotate: -2 });
+  gsap.set(steps[1], { rotate: 1.5 });
+
+  // Animation
+  gsap.to(steps, {
+    opacity: 1,
+    y: 0,
+    duration: 0.8,
+    ease: "power2.out",
+    stagger: 0.2,
+    scrollTrigger: {
+      trigger: ".lab_block-cta-right-content",
+      start: "top 75%",
+      toggleActions: "play none none none",
+      // markers: true,
+      once: true,
+    },
+  });
+}
+
+// Initialisation
+animateSteps();
