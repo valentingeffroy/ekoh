@@ -137,7 +137,6 @@ function createDesktopAnimation() {
 }
 
 function initAnimations() {
-  ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
   gsap.set(".lab_feature-wrapper, .lab_feature-block", { clearProps: "all" });
 
   if (window.innerWidth <= animConfig.mobileBreakpoint) {
@@ -183,3 +182,4 @@ function animateSteps() {
 
 // Initialisation
 animateSteps();
+

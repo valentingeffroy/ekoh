@@ -1,7 +1,9 @@
 // Sélectionner les éléments
 const menuWrapper = document.querySelector(".navbar_menu-wrapper");
 const navbarComponent = document.querySelector(".navbar_component");
-const menuLinks = document.querySelectorAll(".navbar_menu-links .link-effect_content");
+const menuLinks = document.querySelectorAll(
+  ".navbar_menu-links .link-effect_content"
+);
 // const menuBackground = document.querySelector(".navbar_background-menu-open");
 const navbarMenu = document.querySelector(".navbar_menu");
 const navbarLogo = document.querySelector(".navbar_logo");
@@ -27,7 +29,6 @@ gsap.set(imageMask, {
   scale: "0.5",
   opacity: 0,
 });
-
 
 // Fonction pour fermer le menu
 const closeMenu = () => {
