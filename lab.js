@@ -26,41 +26,57 @@ window.onload = () => {
   });
 };
 
-// Animation GSAP
-gsap.set(
-  [
-    ".lab_hero-column-images.is-01",
-    ".lab_hero-column-images.is-02",
-    ".lab_hero-column-images.is-03",
-  ],
-  {
-    y: 200, // Position initiale en bas
-    opacity: 0, // On peut ajouter une opacité initiale à 0
-  }
-);
+// Vérification unique de la largeur de l'écran au chargement
+if (window.innerWidth > 992) {
+  // Animation GSAP uniquement pour les écrans > 992px
+  gsap.set(
+    [
+      ".lab_hero-column-images.is-01",
+      ".lab_hero-column-images.is-02",
+      ".lab_hero-column-images.is-03",
+    ],
+    {
+      y: 200,
+      opacity: 0,
+    }
+  );
 
-gsap.to(".lab_hero-column-images.is-01", {
-  y: 0,
-  opacity: 1,
-  duration: 3,
-  ease: "power3.out",
-});
+  gsap.to(".lab_hero-column-images.is-01", {
+    y: 0,
+    opacity: 1,
+    duration: 3,
+    ease: "power3.out",
+  });
 
-gsap.to(".lab_hero-column-images.is-02", {
-  y: 0,
-  opacity: 1,
-  duration: 3,
-  delay: 0.2, // Décalage de 0.2s
-  ease: "power3.out",
-});
+  gsap.to(".lab_hero-column-images.is-02", {
+    y: 0,
+    opacity: 1,
+    duration: 3,
+    delay: 0.2,
+    ease: "power3.out",
+  });
 
-gsap.to(".lab_hero-column-images.is-03", {
-  y: 0,
-  opacity: 1,
-  duration: 3,
-  delay: 0.4, // Décalage de 0.4s
-  ease: "power3.out",
-});
+  gsap.to(".lab_hero-column-images.is-03", {
+    y: 0,
+    opacity: 1,
+    duration: 3,
+    delay: 0.4,
+    ease: "power3.out",
+  });
+} else {
+  // Réinitialiser les propriétés pour les petits écrans
+  gsap.set(
+    [
+      ".lab_hero-column-images.is-01",
+      ".lab_hero-column-images.is-02",
+      ".lab_hero-column-images.is-03",
+    ],
+    {
+      y: 0,
+      opacity: 1,
+    }
+  );
+}
 
 // SECTION GRID - Slide droite vers gauche ou inverse
 const animConfig = {
@@ -182,4 +198,3 @@ function animateSteps() {
 
 // Initialisation
 animateSteps();
-
